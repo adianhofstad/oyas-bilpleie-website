@@ -358,7 +358,8 @@
       transition:border-color .25s;
     }
     .cc:hover { border-color:var(--blue-border); }
-    .cc-icon { font-size:1.4rem; margin-bottom:.75rem; }
+    .cc-icon { width:44px; height:44px; margin:0 auto .9rem; background:var(--blue-glow); border:1px solid var(--blue-border); border-radius:8px; display:flex; align-items:center; justify-content:center; }
+    .cc-icon svg { width:20px; height:20px; color:var(--blue); }
     .cc-lbl { font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:.4rem; }
     .cc-val { font-size:.9rem; color:var(--text); }
     .cc-val a { color:var(--text); transition:color .2s; }
@@ -727,18 +728,28 @@
 
     <div class="contact-cards">
       <div class="cc">
-        <div class="cc-icon">📍</div>
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
         <div class="cc-lbl">Adresse</div>
         <div class="cc-val">Nordbyveien 116<br/>Sarpsborg</div>
       </div>
       <div class="cc">
-        <div class="cc-icon">✉️</div>
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
         <div class="cc-lbl">E-post</div>
         <div class="cc-val"><a href="mailto:Oyasbilpleie@gmail.com">Oyasbilpleie@gmail.com</a></div>
       </div>
       <div class="cc">
         <div class="cc-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--blue)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
         </div>
         <div class="cc-lbl">Facebook</div>
         <div class="cc-val"><a href="https://www.facebook.com/Oyasbilpleie" target="_blank" rel="noopener">Øyas Bilpleie</a></div>
@@ -785,7 +796,7 @@
   </div>
   <div class="footer-bot">
     <p>© 2025 Øyas Bilpleie · Nordbyveien 116, Sarpsborg</p>
-    <p>Man–Lør 09:00–17:00</p>
+    <p>Man – Lør &nbsp;09:00 – 17:00</p>
   </div>
 </footer>
 
