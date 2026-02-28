@@ -313,9 +313,12 @@
     .g-item:nth-child(1) { grid-column:span 7; grid-row:span 2; min-height:380px; }
     .g-item:nth-child(2) { grid-column:span 5; min-height:185px; }
     .g-item:nth-child(3) { grid-column:span 5; min-height:185px; }
-    .g-item:nth-child(4) { grid-column:span 4; min-height:230px; }
-    .g-item:nth-child(5) { grid-column:span 4; min-height:230px; }
-    .g-item:nth-child(6) { grid-column:span 4; min-height:230px; }
+    .g-item:nth-child(4) { grid-column:span 4; min-height:220px; }
+    .g-item:nth-child(5) { grid-column:span 4; min-height:220px; }
+    .g-item:nth-child(6) { grid-column:span 4; min-height:220px; }
+    .g-item:nth-child(7) { grid-column:span 4; min-height:220px; }
+    .g-item:nth-child(8) { grid-column:span 4; min-height:220px; }
+    .g-item:nth-child(9) { grid-column:span 4; min-height:220px; }
     .g-ph {
       width:100%; height:100%; min-height:inherit;
       display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -451,7 +454,8 @@
       .footer-top { grid-template-columns:1fr 1fr; }
       .g-item:nth-child(1) { grid-column:span 12; min-height:280px; }
       .g-item:nth-child(2),.g-item:nth-child(3) { grid-column:span 6; }
-      .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6) { grid-column:span 4; }
+      .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6),
+      .g-item:nth-child(7),.g-item:nth-child(8),.g-item:nth-child(9) { grid-column:span 4; }
       .contact-cards { grid-template-columns:1fr; }
       .hours-strip { gap:1.2rem; }
     }
@@ -461,8 +465,9 @@
       .footer-top { grid-template-columns:1fr; }
       .phone-fab .fab-label { display:none; }
       .phone-fab { padding:16px; border-radius:50%; }
-      .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6) { grid-column:span 6; }
-      .g-item:nth-child(6) { display:none; }
+      .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6),
+      .g-item:nth-child(7),.g-item:nth-child(8) { grid-column:span 6; }
+      .g-item:nth-child(9) { display:none; }
       .hours-items { gap:1rem; }
     }
   </style>
@@ -694,12 +699,24 @@
       <div class="g-overlay"><span>Utvendig</span></div>
     </div>
     <div class="g-item reveal d3" onclick="openLightbox(this)">
-      <img src="images/galleri-6.jpg" alt="Resultat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="g-ph" style="display:none">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Kommer snart</p>
-      </div>
-      <div class="g-overlay"><span>Resultat</span></div>
+      <img src="images/galleri-6.jpg" alt="Felgrens" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
+      <div class="g-overlay"><span>Felgrens</span></div>
+    </div>
+    <div class="g-item reveal d1" onclick="openLightbox(this)">
+      <img src="images/galleri-7.jpg" alt="Mercedes E-klasse" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
+      <div class="g-overlay"><span>Mercedes</span></div>
+    </div>
+    <div class="g-item reveal d2" onclick="openLightbox(this)">
+      <img src="images/galleri-8.jpg" alt="Mercedes GLC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
+      <div class="g-overlay"><span>Mercedes GLC</span></div>
+    </div>
+    <div class="g-item reveal d3" onclick="openLightbox(this)">
+      <img src="images/galleri-9.jpg" alt="Mitsubishi Outlander" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
+      <div class="g-overlay"><span>Mitsubishi</span></div>
     </div>
   </div>
 
