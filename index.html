@@ -8,65 +8,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-
-  <!-- Favicon -->
   <link rel="shortcut icon" href="images/logo.jpg" type="image/jpeg"/>
   <link rel="apple-touch-icon" href="images/logo.jpg"/>
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Øyas Bilpleie – Premium Bilpleie i Sarpsborg"/>
   <meta property="og:description" content="Premium detailing, keramisk coating og polering i Sarpsborg. Ring 944 55 835."/>
   <meta property="og:locale" content="nb_NO"/>
 
-  <!-- LocalBusiness structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Øyas Bilpleie",
-    "description": "Premium detailing innvendig og utvendig, keramisk coating og polering i Sarpsborg.",
     "telephone": "+4794455835",
     "email": "Oyasbilpleie@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Nordbyveien 116",
       "addressLocality": "Sarpsborg",
-      "addressRegion": "Østfold",
       "addressCountry": "NO"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 59.2839,
-      "longitude": 11.1094
-    },
-    "areaServed": ["Sarpsborg", "Fredrikstad", "Halden", "Moss", "Østfold"],
     "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Sunday"],
-        "opens": "00:00",
-        "closes": "00:00"
-      }
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"00:00","closes":"00:00"}
     ],
     "sameAs": ["https://www.facebook.com/Oyasbilpleie"]
   }
   </script>
 
   <style>
-    /* ─── RESET ─────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     :root {
-      --gold:        #3EC8D4;
-      --gold-dark:   #28A8B5;
-      --gold-glow:   rgba(62,200,212,0.12);
-      --gold-border: rgba(62,200,212,0.22);
+      --blue:        #3EC8D4;
+      --blue-dark:   #28A8B5;
+      --blue-glow:   rgba(62,200,212,0.12);
+      --blue-border: rgba(62,200,212,0.22);
       --bg:          #07090C;
       --bg2:         #0B0F14;
       --bg3:         #101620;
@@ -77,161 +53,181 @@
       --radius:      4px;
       --radius-sm:   3px;
     }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior:smooth; }
     body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; line-height:1.6; }
     a { text-decoration:none; color:inherit; }
     img { max-width:100%; display:block; }
     ::-webkit-scrollbar { width:5px; }
     ::-webkit-scrollbar-track { background:var(--bg); }
-    ::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
+    ::-webkit-scrollbar-thumb { background:var(--blue); border-radius:3px; }
 
-    /* ─── NAVBAR ─────────────────────────────────── */
+    /* ─── NAVBAR ─── */
     #navbar {
       position:fixed; top:0; left:0; right:0; z-index:1000;
       display:flex; align-items:center; justify-content:space-between;
       padding:0 6%; height:72px;
-      background:rgba(10,13,16,0.88);
+      background:rgba(7,9,12,0.90);
       backdrop-filter:blur(20px) saturate(180%);
       border-bottom:1px solid var(--border);
       transition:height .3s, background .3s;
     }
-    #navbar.scrolled { height:60px; background:rgba(10,13,16,0.97); }
-    section[id] { scroll-margin-top: 84px; }
-    .nav-logo { display:flex; align-items:center; }
-    .nav-logo img { height:44px; width:auto; }
-    .nav-links { display:flex; align-items:center; gap:2.2rem; list-style:none; }
+    #navbar.scrolled { height:60px; background:rgba(7,9,12,0.98); }
+    section[id] { scroll-margin-top:80px; }
+    .nav-logo { display:flex; align-items:center; gap:.3rem; }
+    .logo-oyas { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.25rem; letter-spacing:.06em; color:var(--blue); }
+    .logo-bil  { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.25rem; letter-spacing:.06em; color:var(--text); }
+    .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
     .nav-links a {
       font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:600;
-      letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
-      transition:color .2s;
+      letter-spacing:.1em; text-transform:uppercase; color:var(--muted); transition:color .2s;
     }
     .nav-links a:hover { color:var(--text); }
     .nav-cta {
-      background:var(--gold) !important; color:#07090C !important;
+      background:var(--blue) !important; color:#07090C !important;
       padding:9px 22px; border-radius:4px;
-      font-size:.78rem !important; font-weight:700 !important;
-      transition:background .2s !important;
+      font-size:.78rem !important; font-weight:700 !important; transition:background .2s !important;
     }
-    .nav-cta:hover { background:var(--gold-dark) !important; color:#fff !important; }
+    .nav-cta:hover { background:var(--blue-dark) !important; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0; }
     .hamburger span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:all .3s; }
     .mobile-nav {
       display:none; position:fixed; inset:0; top:72px; z-index:999;
-      background:rgba(10,13,16,.98); padding:2.5rem 6%;
+      background:rgba(7,9,12,.98); padding:2.5rem 6%;
       flex-direction:column; gap:1.8rem;
     }
     .mobile-nav.open { display:flex; }
     .mobile-nav a {
       font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:700;
       letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
-      padding-bottom:1.2rem; border-bottom:1px solid var(--border);
-      transition:color .2s;
+      padding-bottom:1.2rem; border-bottom:1px solid var(--border); transition:color .2s;
     }
     .mobile-nav a:last-child { border:none; }
-    .mobile-nav a:hover { color:var(--gold); }
+    .mobile-nav a:hover { color:var(--blue); }
 
-    /* ─── HERO ─────────────────────────────────── */
+    /* ─── HERO ─── */
     #hjem {
       position:relative; min-height:100vh;
-      display:flex; align-items:center; justify-content:center;
-      overflow:hidden;
+      display:flex; align-items:center; justify-content:center; overflow:hidden;
     }
     .hero-bg {
       position:absolute; inset:0;
-      background:url('images/hero.jpg') center 40% / cover no-repeat;
+      background:
+        radial-gradient(ellipse at 25% 60%, rgba(62,200,212,.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 30%, rgba(40,168,181,.09) 0%, transparent 50%),
+        linear-gradient(160deg, #07090C 0%, #0B1520 55%, #07090C 100%);
+    }
+    .hero-bg img {
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+      opacity:.35; mix-blend-mode:luminosity;
     }
     .hero-overlay {
       position:absolute; inset:0;
-      background:linear-gradient(160deg,rgba(10,13,16,.88) 0%,rgba(10,13,16,.58) 55%,rgba(20,10,5,.80) 100%);
+      background:linear-gradient(180deg,rgba(7,9,12,.5) 0%,rgba(7,9,12,.2) 50%,rgba(7,9,12,.7) 100%);
     }
     .hero-content {
       position:relative; z-index:2;
-      max-width:820px; padding:0 6%; text-align:center;
+      max-width:860px; padding:0 6%; text-align:center;
     }
     .hero-pill {
       display:inline-flex; align-items:center; gap:.5rem;
-      background:rgba(200,150,62,.08); border:1px solid var(--gold-border);
-      color:rgba(200,150,62,.75); font-family:'Montserrat',sans-serif;
+      background:rgba(62,200,212,.07); border:1px solid var(--blue-border);
+      color:rgba(62,200,212,.8); font-family:'Montserrat',sans-serif;
       font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
-      padding:7px 18px; border-radius:50px; margin-bottom:2rem;
+      padding:7px 20px; border-radius:50px; margin-bottom:2rem;
     }
     .hero-title {
       font-family:'Montserrat',sans-serif;
-      font-size:clamp(2.4rem,6vw,4.8rem);
-      font-weight:800; line-height:1.06; letter-spacing:-.02em;
-      margin-bottom:1.4rem; text-shadow:none;
+      font-size:clamp(2.4rem,6vw,5rem);
+      font-weight:900; line-height:1.05; letter-spacing:-.025em;
+      margin-bottom:1.4rem;
     }
-    .hero-title .accent { color:var(--gold); }
+    .hero-title .accent { color:var(--blue); }
     .hero-sub {
-      font-size:clamp(.95rem,2vw,1.12rem);
-      color:rgba(232,237,242,.72); font-weight:400; line-height:1.75;
-      max-width:560px; margin:0 auto 2.8rem;
+      font-size:clamp(.95rem,2vw,1.15rem);
+      color:rgba(228,237,245,.65); line-height:1.78;
+      max-width:580px; margin:0 auto 3rem;
     }
-    .hero-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-    .btn-primary {
-      display:inline-flex; align-items:center; gap:.6rem;
-      background:var(--gold); color:#07090C;
-      padding:13px 28px; border-radius:4px;
-      font-family:'Montserrat',sans-serif; font-size:.86rem; font-weight:700;
-      letter-spacing:.07em; text-transform:uppercase; border:none; cursor:pointer;
-      box-shadow:none; transition:background .25s;
+    /* Ring-knapp i hero */
+    .hero-ring {
+      display:inline-flex; align-items:center; gap:.9rem;
+      background:var(--blue); color:#07090C;
+      padding:18px 38px; border-radius:4px;
+      font-family:'Montserrat',sans-serif; font-size:1.05rem; font-weight:800;
+      letter-spacing:.04em; text-transform:uppercase;
+      border:none; cursor:pointer; transition:background .25s;
     }
-    .btn-primary:hover { background:var(--gold-dark); }
-    .btn-outline {
-      display:inline-flex; align-items:center; gap:.6rem;
-      background:transparent; color:var(--text);
-      padding:12px 28px; border-radius:4px;
-      font-family:'Montserrat',sans-serif; font-size:.86rem; font-weight:600;
-      letter-spacing:.07em; text-transform:uppercase;
-      border:1.5px solid rgba(255,255,255,.22); cursor:pointer;
-      transition:border-color .25s, color .25s;
-    }
-    .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+    .hero-ring:hover { background:var(--blue-dark); color:#fff; }
+    .hero-ring svg { width:20px; height:20px; flex-shrink:0; }
     .hero-scroll {
       position:absolute; bottom:2.2rem; left:50%; transform:translateX(-50%);
       display:flex; flex-direction:column; align-items:center; gap:.5rem;
       font-family:'Montserrat',sans-serif; font-size:.65rem; letter-spacing:.15em;
-      text-transform:uppercase; color:rgba(255,255,255,.3);
+      text-transform:uppercase; color:rgba(255,255,255,.25);
       animation:float 2.5s ease-in-out infinite;
     }
-    .hero-scroll-line { width:1px; height:40px; background:linear-gradient(to bottom,var(--gold),transparent); }
+    .hero-scroll-line { width:1px; height:40px; background:linear-gradient(to bottom,var(--blue),transparent); }
     @keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
-    /* ─── STATS STRIP ─────────────────────────── */
+    /* ─── STATS ─── */
     .stats-strip {
-      background:var(--bg2);
-      border-bottom:1px solid var(--border);
+      background:var(--bg2); border-bottom:1px solid var(--border);
       display:grid; grid-template-columns:repeat(4,1fr);
     }
-    .stat {
-      padding:1.6rem 1rem; text-align:center;
-    }
-    .stat-val {
-      font-family:'Montserrat',sans-serif;
-      font-size:1.5rem; font-weight:900; color:var(--gold);
-      letter-spacing:-.02em;
-    }
-    .stat-lbl { font-size:.75rem; color:var(--muted); margin-top:.3rem; letter-spacing:.04em; }
+    .stat { padding:1.7rem 1rem; text-align:center; }
+    .stat-val { font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:900; color:var(--blue); }
+    .stat-lbl { font-size:.75rem; color:var(--muted); margin-top:.3rem; }
 
-    /* ─── SECTION BASE ─────────────────────────── */
+    /* ─── ÅPNINGSTIDER STRIP ─── */
+    .hours-strip {
+      background:var(--bg); border-bottom:1px solid var(--border);
+      padding:1.2rem 6%; display:flex; align-items:center; justify-content:center;
+      gap:2.5rem; flex-wrap:wrap;
+    }
+    .hours-strip-label {
+      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
+      letter-spacing:.18em; text-transform:uppercase; color:var(--blue);
+    }
+    .hours-items { display:flex; gap:2rem; flex-wrap:wrap; align-items:center; }
+    .hours-item { display:flex; align-items:center; gap:.6rem; }
+    .hours-day { font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:600; color:var(--text); }
+    .hours-time { font-size:.8rem; color:var(--muted); }
+    .hours-closed { color:rgba(96,117,133,.6); }
+
+    /* ─── SECTION BASE ─── */
     section { padding:7rem 6%; }
     .sec-label {
       font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-      letter-spacing:.2em; text-transform:uppercase; color:var(--gold);
-      margin-bottom:.9rem;
+      letter-spacing:.2em; text-transform:uppercase; color:var(--blue); margin-bottom:.9rem;
     }
     .sec-title {
       font-family:'Montserrat',sans-serif;
       font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:900;
       line-height:1.1; letter-spacing:-.02em; margin-bottom:1.1rem;
     }
-    .sec-title span { color:var(--gold); }
+    .sec-title span { color:var(--blue); }
     .sec-desc { color:var(--muted); font-size:.97rem; line-height:1.75; max-width:560px; }
     .sec-head { margin-bottom:3.5rem; }
     .sec-head.center { text-align:center; }
     .sec-head.center .sec-desc { margin:0 auto; }
 
-    /* ─── OM OSS ──────────────────────────────── */
+    /* ─── RING-BANNER (under hero) ─── */
+    .ring-banner {
+      background:linear-gradient(135deg, rgba(62,200,212,.08) 0%, rgba(40,168,181,.05) 100%);
+      border-top:1px solid var(--blue-border);
+      border-bottom:1px solid var(--blue-border);
+      padding:2.5rem 6%; text-align:center;
+    }
+    .ring-banner p {
+      font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:600;
+      letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:.8rem;
+    }
+    .ring-number {
+      font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem);
+      font-weight:900; color:var(--blue); letter-spacing:.04em;
+    }
+    .ring-number a { color:inherit; }
+
+    /* ─── OM OSS ─── */
     #om-oss { background:var(--bg2); }
     .about-wrap { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
     .about-img-col { position:relative; }
@@ -239,71 +235,74 @@
     .about-img-ph {
       width:100%; height:480px; border-radius:var(--radius);
       background:linear-gradient(135deg,var(--bg3),var(--card));
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:1rem; color:var(--muted);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.5rem;
     }
-    .about-img-ph svg { opacity:.2; }
-    .about-img-ph p { font-size:.82rem; letter-spacing:.06em; opacity:.6; }
+    .about-img-ph svg { opacity:.15; color:var(--blue); }
+    .about-img-ph p { font-size:.82rem; color:var(--muted); letter-spacing:.06em; }
     .about-badge {
       position:absolute; bottom:2rem; left:2rem;
-      background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
       padding:1.2rem 1.6rem; border-radius:6px;
-      box-shadow:0 8px 30px rgba(200,150,62,.3);
+      box-shadow:0 8px 30px rgba(62,200,212,.25);
     }
     .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; line-height:1; color:#07090C; }
-    .about-badge .sm { font-size:.8rem; color:rgba(5,10,15,.75); margin-top:.25rem; }
-    .about-text .sec-desc { max-width:100%; }
+    .about-badge .sm  { font-size:.8rem; color:rgba(5,10,15,.7); margin-top:.25rem; }
     .about-text p { color:var(--muted); font-size:.93rem; line-height:1.8; margin-bottom:1rem; }
     .about-text p strong { color:var(--text); }
     .chips { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.8rem; }
     .chip {
       display:flex; align-items:center; gap:.4rem;
       background:var(--card); border:1px solid var(--border);
-      padding:7px 14px; border-radius:50px;
-      font-size:.8rem; color:var(--text);
+      padding:7px 14px; border-radius:50px; font-size:.8rem; color:var(--text);
     }
-    .chip::before { content:''; width:6px; height:6px; background:var(--gold); border-radius:50%; flex-shrink:0; }
+    .chip::before { content:''; width:6px; height:6px; background:var(--blue); border-radius:50%; flex-shrink:0; }
 
-    /* ─── SERVICES ─────────────────────────────── */
+    /* ─── TJENESTER (tekst-kort, ingen bilder) ─── */
     #tjenester { background:var(--bg); }
-    .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+    .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
     .srv-card {
       background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius); overflow:hidden;
-      transition:transform .3s, border-color .3s;
+      border-radius:var(--radius); padding:2.5rem 2rem;
+      transition:border-color .3s, transform .3s;
+      position:relative; overflow:hidden;
     }
-    .srv-card:hover { transform:translateY(-3px); border-color:var(--gold-border); }
-    .srv-img {
-      height:200px; overflow:hidden; background:var(--bg3);
-      position:relative;
+    .srv-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg,var(--blue),var(--blue-dark));
+      opacity:0; transition:opacity .3s;
     }
-    .srv-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
-    .srv-card:hover .srv-img img { transform:scale(1.06); }
-    .srv-img-ph {
-      width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-      font-size:3rem;
-      background:linear-gradient(135deg,var(--bg3),var(--card));
+    .srv-card:hover { border-color:var(--blue-border); transform:translateY(-4px); }
+    .srv-card:hover::before { opacity:1; }
+    .srv-icon {
+      width:56px; height:56px; margin-bottom:1.5rem;
+      background:var(--blue-glow); border:1px solid var(--blue-border);
+      border-radius:10px; display:flex; align-items:center; justify-content:center;
     }
-    .srv-body { padding:1.5rem 1.6rem 1.7rem; }
-    .srv-body h3 { font-family:'Montserrat',sans-serif; font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
-    .srv-body p { color:var(--muted); font-size:.85rem; line-height:1.6; margin-bottom:1rem; }
+    .srv-icon svg { width:26px; height:26px; color:var(--blue); }
+    .srv-card h3 {
+      font-family:'Montserrat',sans-serif; font-size:1.05rem; font-weight:800;
+      margin-bottom:.7rem; letter-spacing:-.01em;
+    }
+    .srv-card p { color:var(--muted); font-size:.88rem; line-height:1.7; margin-bottom:1.4rem; }
     .srv-tag {
-      display:inline-block; color:var(--gold);
-      font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:700;
-      letter-spacing:.06em; text-transform:uppercase;
+      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
+      letter-spacing:.1em; text-transform:uppercase; color:var(--blue);
+    }
+    /* Bakgrunnsnummer */
+    .srv-num {
+      position:absolute; bottom:.5rem; right:1.2rem;
+      font-family:'Montserrat',sans-serif; font-size:5rem; font-weight:900;
+      color:rgba(62,200,212,.04); line-height:1; user-select:none;
     }
 
-    /* ─── GALLERY ─────────────────────────────── */
+    /* ─── GALLERI ─── */
     #galleri { background:var(--bg2); }
     .gallery-grid {
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:8px;
+      display:grid; grid-template-columns:repeat(12,1fr); gap:8px;
     }
     .g-item {
       border-radius:var(--radius-sm); overflow:hidden;
-      position:relative; cursor:pointer;
-      background:var(--bg3);
+      position:relative; cursor:pointer; background:var(--bg3);
     }
     .g-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s, filter .4s; display:block; }
     .g-item:hover img { transform:scale(1.06); filter:brightness(1.1); }
@@ -326,169 +325,167 @@
     .g-ph {
       width:100%; height:100%; min-height:inherit;
       display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:.75rem; background:var(--bg3); color:var(--muted);
+      gap:.75rem; color:var(--muted);
+      background:linear-gradient(135deg, var(--bg3) 0%, var(--card) 100%);
     }
-    .g-ph svg { opacity:.25; }
-    .g-ph p { font-size:.78rem; letter-spacing:.06em; opacity:.5; }
+    .g-ph svg { opacity:.18; color:var(--blue); }
+    .g-ph p { font-size:.75rem; letter-spacing:.06em; opacity:.45; }
     .gallery-cta { text-align:center; margin-top:2rem; }
     .gallery-cta p { color:var(--muted); font-size:.88rem; margin-bottom:1.2rem; }
 
-    /* ─── CONTACT ─────────────────────────────── */
+    /* ─── KONTAKT (kun ring) ─── */
     #kontakt { background:var(--bg); }
-    .contact-wrap { display:grid; grid-template-columns:1.3fr 1fr; gap:4rem; align-items:start; }
-    .cinfo { display:flex; flex-direction:column; gap:1.5rem; }
-    .ci {
-      display:flex; align-items:flex-start; gap:1rem;
+    .contact-ring {
+      max-width:680px; margin:0 auto; text-align:center;
+    }
+    .contact-ring .big-phone {
+      font-family:'Montserrat',sans-serif;
+      font-size:clamp(2.8rem,8vw,5.5rem);
+      font-weight:900; letter-spacing:.02em; color:var(--blue);
+      display:block; margin:1.5rem 0;
+      transition:color .2s;
+    }
+    .contact-ring .big-phone:hover { color:var(--blue-dark); }
+    .contact-ring .ring-sub {
+      color:var(--muted); font-size:1rem; margin-bottom:2.5rem;
+    }
+    .contact-cards {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:3rem;
+    }
+    .cc {
       background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius-sm); padding:1.3rem;
+      border-radius:var(--radius-sm); padding:1.5rem 1.2rem; text-align:center;
       transition:border-color .25s;
     }
-    .ci:hover { border-color:var(--gold-border); }
-    .ci-icon {
-      width:44px; height:44px; flex-shrink:0; border-radius:6px;
-      background:var(--gold-glow); border:1px solid var(--gold-border);
-      display:flex; align-items:center; justify-content:center; font-size:1.1rem;
-    }
-    .ci-lbl { font-size:.7rem; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:.25rem; }
-    .ci-val { font-size:.93rem; color:var(--text); }
-    .ci-val a { color:var(--text); transition:color .2s; }
-    .ci-val a:hover { color:var(--gold); }
-    .cform {
-      background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius); padding:2.5rem;
-    }
-    .cform h3 { font-family:'Montserrat',sans-serif; font-size:1.15rem; font-weight:700; margin-bottom:1.8rem; }
-    .frow { display:grid; grid-template-columns:1fr 1fr; gap:.9rem; }
-    .fg { display:flex; flex-direction:column; gap:.45rem; margin-bottom:.9rem; }
-    .fg label { font-size:.72rem; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
-    .fg input, .fg select, .fg textarea {
-      background:var(--bg3); border:1px solid var(--border);
-      border-radius:var(--radius-sm); padding:11px 14px;
-      color:var(--text); font-family:'Inter',sans-serif; font-size:.9rem;
-      outline:none; width:100%; transition:border-color .2s;
-      -webkit-appearance:none;
-    }
-    .fg input::placeholder, .fg textarea::placeholder { color:var(--muted); }
-    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:var(--gold); }
-    .fg select option { background:var(--bg2); }
-    .fg textarea { resize:vertical; min-height:110px; }
-    .fsub {
-      width:100%; background:var(--gold); color:#07090C;
-      padding:13px; border-radius:4px; border:none; cursor:pointer;
-      font-family:'Montserrat',sans-serif; font-size:.85rem; font-weight:700;
-      letter-spacing:.08em; text-transform:uppercase; margin-top:.4rem;
-      transition:background .25s;
-    }
-    .fsub:hover { background:var(--gold-dark); }
-    .f-ok {
-      display:none; margin-top:1rem; padding:1rem;
-      background:rgba(200,150,62,.08); border:1px solid var(--gold-border);
-      border-radius:var(--radius-sm); font-size:.85rem; color:var(--gold); text-align:center;
-    }
+    .cc:hover { border-color:var(--blue-border); }
+    .cc-icon { font-size:1.4rem; margin-bottom:.75rem; }
+    .cc-lbl { font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:.4rem; }
+    .cc-val { font-size:.9rem; color:var(--text); }
+    .cc-val a { color:var(--text); transition:color .2s; }
+    .cc-val a:hover { color:var(--blue); }
 
-    /* ─── FOOTER ─────────────────────────────── */
+    /* Åpningstider i kontakt */
+    .contact-hours {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:1.5rem 2rem;
+      margin-top:1.2rem; display:inline-block; width:100%;
+    }
+    .contact-hours-title {
+      font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:700;
+      letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+      margin-bottom:1rem; text-align:center;
+    }
+    .hours-row {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:.35rem 0; border-bottom:1px solid var(--border); font-size:.88rem;
+    }
+    .hours-row:last-child { border:none; }
+    .hours-row .day { color:var(--text); }
+    .hours-row .time { color:var(--blue); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; }
+    .hours-row .time.closed { color:var(--muted); font-weight:400; }
+
+    /* ─── FOOTER ─── */
     footer {
       background:var(--bg2); border-top:1px solid var(--border);
       padding:3.5rem 6% 2rem;
     }
     .footer-top { display:grid; grid-template-columns:1.8fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
-    .f-brand { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.1rem; color:var(--text); margin-bottom:.8rem; }
-    .f-brand span { color:var(--gold); font-weight:900; }
+    .f-brand { display:flex; gap:.3rem; align-items:center; margin-bottom:.8rem; }
+    .f-brand .fo { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.05rem; color:var(--blue); }
+    .f-brand .fb { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.05rem; color:var(--text); }
     .f-about { font-size:.85rem; color:var(--muted); line-height:1.7; }
     .f-col h4 {
       font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-      letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.3);
-      margin-bottom:.9rem;
+      letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:.9rem;
     }
     .f-links { display:flex; flex-direction:column; gap:.55rem; }
     .f-links a { font-size:.85rem; color:var(--muted); transition:color .2s; }
-    .f-links a:hover { color:var(--gold); }
+    .f-links a:hover { color:var(--blue); }
     .footer-bot {
       border-top:1px solid var(--border); padding-top:1.5rem;
       display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
     }
-    .footer-bot p { font-size:.78rem; color:rgba(255,255,255,.2); }
+    .footer-bot p { font-size:.78rem; color:rgba(255,255,255,.18); }
 
-    /* ─── PHONE FAB ──────────────────────────── */
+    /* ─── PHONE FAB ─── */
     .phone-fab {
       position:fixed; bottom:2rem; right:2rem; z-index:998;
       display:flex; align-items:center; gap:.7rem;
-      background:var(--gold); color:#000;
+      background:var(--blue); color:#07090C;
       padding:14px 22px; border-radius:50px;
-      font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:700;
-      box-shadow:0 6px 32px rgba(200,150,62,.4);
-      transition:all .3s;
-      animation:fabpulse 2.5s ease-in-out infinite;
+      font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:800;
+      box-shadow:0 6px 32px rgba(62,200,212,.4);
+      transition:all .3s; animation:fabpulse 2.5s ease-in-out infinite;
     }
-    .phone-fab:hover { background:var(--gold-dark); transform:translateY(-2px); }
-    @keyframes fabpulse { 0%,100%{box-shadow:0 6px 32px rgba(200,150,62,.4)} 50%{box-shadow:0 6px 48px rgba(200,150,62,.65)} }
+    .phone-fab:hover { background:var(--blue-dark); color:#fff; transform:translateY(-2px); }
+    @keyframes fabpulse { 0%,100%{box-shadow:0 6px 32px rgba(62,200,212,.4)} 50%{box-shadow:0 6px 48px rgba(62,200,212,.65)} }
     .phone-fab svg { width:16px; height:16px; flex-shrink:0; }
 
-    /* ─── SCROLL REVEAL ──────────────────────── */
+    /* ─── REVEAL ─── */
     .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
     .reveal.d1 { transition-delay:.1s; }
     .reveal.d2 { transition-delay:.2s; }
     .reveal.d3 { transition-delay:.3s; }
     .reveal.show { opacity:1; transform:none; }
 
-    /* ─── RESPONSIVE ─────────────────────────── */
+    /* ─── KNAPPER ─── */
+    .btn-outline {
+      display:inline-flex; align-items:center; gap:.6rem;
+      background:transparent; color:var(--text);
+      padding:12px 28px; border-radius:4px;
+      font-family:'Montserrat',sans-serif; font-size:.86rem; font-weight:600;
+      letter-spacing:.07em; text-transform:uppercase;
+      border:1.5px solid rgba(255,255,255,.18); cursor:pointer; transition:border-color .25s, color .25s;
+    }
+    .btn-outline:hover { border-color:var(--blue); color:var(--blue); }
+
+    /* ─── LIGHTBOX ─── */
+    #lightbox { display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.93); align-items:center; justify-content:center; }
+    #lightbox.open { display:flex; }
+    #lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; object-fit:contain; }
+    #lightbox-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width:1024px) {
-      .services-grid { grid-template-columns:1fr 1fr; }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
     }
     @media (max-width:900px) {
       .nav-links { display:none; }
       .hamburger { display:flex; }
       .stats-strip { grid-template-columns:repeat(2,1fr); }
       .about-wrap { grid-template-columns:1fr; gap:3rem; }
-      .contact-wrap { grid-template-columns:1fr; gap:2.5rem; }
       .footer-top { grid-template-columns:1fr 1fr; }
       .g-item:nth-child(1) { grid-column:span 12; min-height:280px; }
       .g-item:nth-child(2),.g-item:nth-child(3) { grid-column:span 6; }
       .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6) { grid-column:span 4; }
+      .contact-cards { grid-template-columns:1fr; }
+      .hours-strip { gap:1.2rem; }
     }
     @media (max-width:640px) {
       section { padding:4.5rem 5%; }
       .services-grid { grid-template-columns:1fr; }
       .footer-top { grid-template-columns:1fr; }
-      .frow { grid-template-columns:1fr; }
       .phone-fab .fab-label { display:none; }
       .phone-fab { padding:16px; border-radius:50%; }
       .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6) { grid-column:span 6; }
       .g-item:nth-child(6) { display:none; }
-    }
-
-    /* ─── HOURS TABLE ───────────────────────── */
-    .hours-table { width:100%; border-collapse:collapse; font-size:.88rem; }
-    .hours-table td { padding:.3rem 0; color:var(--text); }
-    .hours-table td:last-child { text-align:right; color:var(--gold); font-family:'Montserrat',sans-serif; font-weight:600; }
-    .hours-table tr.closed td { color:var(--muted); }
-    .hours-table tr.closed td:last-child { color:var(--muted); font-weight:400; }
-
-    /* ─── LIGHTBOX ───────────────────────────── */
-    #lightbox {
-      display:none; position:fixed; inset:0; z-index:2000;
-      background:rgba(0,0,0,.93); align-items:center; justify-content:center;
-    }
-    #lightbox.open { display:flex; }
-    #lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; object-fit:contain; }
-    #lightbox-close {
-      position:absolute; top:1.5rem; right:1.5rem;
-      background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1;
+      .hours-items { gap:1rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══════════════════════════════ -->
+<!-- ═══ NAVBAR ═══ -->
 <nav id="navbar">
   <a href="#hjem" class="nav-logo">
-    <img src="images/logo-text.jpg" alt="Øyas Bilpleie"/>
+    <span class="logo-oyas">ØYAS</span>
+    <span class="logo-bil">&nbsp;BILPLEIE</span>
   </a>
   <ul class="nav-links">
     <li><a href="#om-oss">Om oss</a></li>
     <li><a href="#tjenester">Tjenester</a></li>
     <li><a href="#galleri">Galleri</a></li>
-    <li><a href="#kontakt" class="nav-cta">Få pristilbud</a></li>
+    <li><a href="#kontakt" class="nav-cta">Ring oss</a></li>
   </ul>
   <button class="hamburger" id="ham" onclick="toggleNav()" aria-label="Åpne meny"><span></span><span></span><span></span></button>
 </nav>
@@ -496,12 +493,14 @@
   <a href="#om-oss" onclick="toggleNav()">Om oss</a>
   <a href="#tjenester" onclick="toggleNav()">Tjenester</a>
   <a href="#galleri" onclick="toggleNav()">Galleri</a>
-  <a href="#kontakt" onclick="toggleNav()" style="color:var(--gold)">Få pristilbud →</a>
+  <a href="#kontakt" onclick="toggleNav()" style="color:var(--blue)">Ring oss: 944 55 835 →</a>
 </div>
 
-<!-- ═══ HERO ══════════════════════════════════ -->
+<!-- ═══ HERO ═══ -->
 <section id="hjem">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <img src="images/hero.jpg" alt="" onerror="this.style.display='none'"/>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-pill">Sarpsborg &nbsp;·&nbsp; Premium Bilpleie</div>
@@ -510,29 +509,53 @@
       <span class="accent">er det som driver oss</span>
     </h1>
     <p class="hero-sub">
-      Premium detailing, keramisk coating og polering – utført med lidenskap og presisjon for deg som setter pris på en velstelt bil.
+      Premium detailing, keramisk coating og polering – utført med lidenskap og presisjon. Ring oss for et tilbud.
     </p>
-    <div class="hero-actions">
-      <a href="#kontakt" class="btn-primary">Få pristilbud</a>
-      <a href="#tjenester" class="btn-outline">Se tjenester →</a>
-    </div>
+    <a href="tel:+4794455835" class="hero-ring">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.88 12.36 19.79 19.79 0 0 1 1.81 3.69 2 2 0 0 1 3.78 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      944 55 835
+    </a>
   </div>
   <div class="hero-scroll"><div class="hero-scroll-line"></div>Scroll</div>
 </section>
 
-<!-- ═══ STATS ══════════════════════════════════ -->
-<div class="stats-strip reveal">
-  <div class="stat"><div class="stat-val">Premium</div><div class="stat-lbl">Kvalitetsprodukter</div></div>
-  <div class="stat"><div class="stat-val">100%</div><div class="stat-lbl">Fornøyde kunder</div></div>
-  <div class="stat"><div class="stat-val">Keramisk</div><div class="stat-lbl">Coating-spesialist</div></div>
-  <div class="stat"><div class="stat-val">Sarpsborg</div><div class="stat-lbl">Nordbyveien 116</div></div>
+<!-- ═══ STATS ═══ -->
+<div class="stats-strip">
+  <div class="stat reveal"><div class="stat-val">Premium</div><div class="stat-lbl">Kvalitetsprodukter</div></div>
+  <div class="stat reveal d1"><div class="stat-val">100%</div><div class="stat-lbl">Fornøyde kunder</div></div>
+  <div class="stat reveal d2"><div class="stat-val">Keramisk</div><div class="stat-lbl">Coating-spesialist</div></div>
+  <div class="stat reveal d3"><div class="stat-val">Sarpsborg</div><div class="stat-lbl">Nordbyveien 116</div></div>
 </div>
 
-<!-- ═══ OM OSS ═════════════════════════════════ -->
+<!-- ═══ ÅPNINGSTIDER STRIP ═══ -->
+<div class="hours-strip reveal">
+  <div class="hours-strip-label">Åpningstider</div>
+  <div class="hours-items">
+    <div class="hours-item">
+      <span class="hours-day">Man – Lør</span>
+      <span class="hours-time">09:00 – 17:00</span>
+    </div>
+    <div class="hours-item">
+      <span class="hours-day hours-closed">Søndag</span>
+      <span class="hours-time hours-closed">Stengt</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OM OSS ═══ -->
 <section id="om-oss">
   <div class="about-wrap">
     <div class="about-img-col reveal">
-      <img src="images/om-oss.jpg" alt="Øyas Bilpleie – om oss" onerror="this.parentElement.innerHTML='<div class=\'about-img-ph\'><svg width=\'64\' height=\'64\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'2\' y=\'7\' width=\'20\' height=\'14\' rx=\'2\'/><path d=\'M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\'/></svg><p>Bilde kommer snart</p></div>'"/>
+      <img src="images/om-oss.jpg" alt="Øyas Bilpleie" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="about-img-ph" style="display:none">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".8">
+          <path d="M19 17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2z"/>
+          <circle cx="12" cy="11" r="3"/>
+        </svg>
+        <p>Bilde kommer snart</p>
+      </div>
       <div class="about-badge">
         <div class="big">★★★★★</div>
         <div class="sm">Topprangert av kunder</div>
@@ -543,7 +566,7 @@
       <h2 class="sec-title">Lidenskapen for <span>bilpleie</span></h2>
       <p>Øyas Bilpleie ble grunnlagt av folk som elsker biler. Vi tror at en velstelt bil ikke bare er finere – den bevarer verdien og gir deg stolthet hver gang du setter deg bak rattet.</p>
       <p>Vi bruker <strong>kun premium produkter</strong> og den nyeste teknologien innen keramisk coating og detailing. Hvert oppdrag behandles som om det var vår egen bil.</p>
-      <p>Basert i Sarpsborg, betjener vi kunder i hele Østfold med samme dedikasjon og presisjon uansett bilmerke eller -modell.</p>
+      <p>Basert på Nordbyveien 116 i Sarpsborg – <strong>ring oss for å avtale tid</strong>.</p>
       <div class="chips">
         <div class="chip">Premium produkter</div>
         <div class="chip">Keramisk coating</div>
@@ -551,133 +574,142 @@
         <div class="chip">Innvendig detailing</div>
         <div class="chip">Utvendig detailing</div>
       </div>
-      <a href="#kontakt" class="btn-primary" style="margin-top:2rem; display:inline-flex;">Kontakt oss</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ TJENESTER ══════════════════════════════ -->
+<!-- ═══ TJENESTER ═══ -->
 <section id="tjenester">
   <div class="sec-head center">
     <div class="sec-label">Tjenester</div>
     <h2 class="sec-title">Det vi er <span>best på</span></h2>
-    <p class="sec-desc">Fra grundig detailing til langvarig beskyttelse med keramisk coating – vi tilbyr det du trenger for en bil i toppstand.</p>
+    <p class="sec-desc">Fra grundig detailing til langvarig lakkbeskyttelse – ring oss for pris og avtale.</p>
   </div>
 
   <div class="services-grid">
 
-    <!-- Detailing utvendig -->
+    <!-- 1 -->
     <div class="srv-card reveal">
-      <div class="srv-img">
-        <img src="images/detailing-utvendig.jpg" alt="Detailing utvendig" onerror="this.parentElement.innerHTML='<div class=\'srv-img-ph\'>🚗</div>'"/>
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 17h18M5 17l1.5-6h11L19 17M7 11l1-4h8l1 4"/>
+          <circle cx="7.5" cy="19.5" r="1.5"/><circle cx="16.5" cy="19.5" r="1.5"/>
+        </svg>
       </div>
-      <div class="srv-body">
-        <h3>Detailing Utvendig</h3>
-        <p>Grundig utvendig rens, lakkpleie og beskyttelse. Vi fjerner forurensning, behandler lakken og gir bilen din et flott, klart finish som holder seg.</p>
-        <div class="srv-tag">Utvendig</div>
-      </div>
+      <h3>Detailing Utvendig</h3>
+      <p>Grundig utvendig rens, lakkpleie og beskyttelse. Vi fjerner forurensning, behandler lakken og gir bilen din et flott, klart finish som holder seg over tid.</p>
+      <div class="srv-tag">Utvendig behandling</div>
+      <div class="srv-num">01</div>
     </div>
 
-    <!-- Detailing innvendig -->
+    <!-- 2 -->
     <div class="srv-card reveal d1">
-      <div class="srv-img">
-        <img src="images/detailing-innvendig.jpg" alt="Detailing innvendig" onerror="this.parentElement.innerHTML='<div class=\'srv-img-ph\'>🪑</div>'"/>
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="20" height="14" rx="2"/>
+          <path d="M8 6V4h8v2"/>
+          <line x1="12" y1="10" x2="12" y2="16"/>
+          <line x1="9" y1="13" x2="15" y2="13"/>
+        </svg>
       </div>
-      <div class="srv-body">
-        <h3>Detailing Innvendig</h3>
-        <p>Dyprens av hele kupeen – seter, tepper, dashbord og alle hjørner. Bilen din vil lukte og se ut som ny fra innsiden.</p>
-        <div class="srv-tag">Innvendig</div>
-      </div>
+      <h3>Detailing Innvendig</h3>
+      <p>Dyprens av hele kupeen – seter, tepper, dashbord og alle kanter. Bilen din vil lukte og se ut som ny igjen fra innsiden.</p>
+      <div class="srv-tag">Innvendig behandling</div>
+      <div class="srv-num">02</div>
     </div>
 
-    <!-- Keramisk coating -->
+    <!-- 3 -->
     <div class="srv-card reveal d2">
-      <div class="srv-img">
-        <img src="images/keramisk-coating.jpg" alt="Keramisk coating" onerror="this.parentElement.innerHTML='<div class=\'srv-img-ph\'>💎</div>'"/>
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
       </div>
-      <div class="srv-body">
-        <h3>Keramisk Coating</h3>
-        <p>Langtidsbeskyttelse av lakken med profesjonell keramisk coating. Gir en dybdeglans som varer i flere år og gjør bilen enklere å holde ren.</p>
-        <div class="srv-tag">Langvarig beskyttelse</div>
-      </div>
+      <h3>Keramisk Coating</h3>
+      <p>Langtidsbeskyttelse med profesjonell keramisk coating. Gir dyp glans som varer i flere år og gjør bilen vesentlig enklere å holde ren.</p>
+      <div class="srv-tag">Langvarig beskyttelse</div>
+      <div class="srv-num">03</div>
     </div>
 
-    <!-- Polering -->
+    <!-- 4 -->
     <div class="srv-card reveal d3">
-      <div class="srv-img">
-        <img src="images/polering.jpg" alt="Polering" onerror="this.parentElement.innerHTML='<div class=\'srv-img-ph\'>✨</div>'"/>
+      <div class="srv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
       </div>
-      <div class="srv-body">
-        <h3>Polering</h3>
-        <p>Maskinpolering som fjerner riper, virvelmerker og matte partier. Vi gjenoppretter lakkens opprinnelige glans og dybde.</p>
-        <div class="srv-tag">Lakkrestaurering</div>
-      </div>
+      <h3>Polering</h3>
+      <p>Maskinpolering som fjerner riper, virvelmerker og matte partier i lakken. Vi gjenoppretter den opprinnelige glanset og dybden.</p>
+      <div class="srv-tag">Lakkrestaurering</div>
+      <div class="srv-num">04</div>
     </div>
 
   </div>
 </section>
 
-<!-- ═══ GALLERI ════════════════════════════════ -->
+<!-- ═══ GALLERI ═══ -->
 <section id="galleri">
   <div class="sec-head center">
     <div class="sec-label">Galleri</div>
     <h2 class="sec-title">Arbeidet <span>taler for seg selv</span></h2>
-    <p class="sec-desc">Et knippe av jobber vi er stolte av. Besøk oss på Facebook for å se mer.</p>
+    <p class="sec-desc">Bilder av jobber vi er stolte av. Følg oss på Facebook for løpende oppdateringer.</p>
   </div>
 
   <div class="gallery-grid">
     <div class="g-item reveal" onclick="openLightbox(this)">
-      <img src="images/galleri-1.jpg" alt="Bilpleie Sarpsborg" onerror="this.style.display='none';this.parentElement.querySelector('.g-ph').style.display='flex'"/>
+      <img src="images/galleri-1.jpg" alt="Detailing" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Bilde legges til</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <p>Kommer snart</p>
       </div>
       <div class="g-overlay"><span>Detailing</span></div>
     </div>
     <div class="g-item reveal d1" onclick="openLightbox(this)">
-      <img src="images/galleri-2.jpg" alt="Keramisk coating" onerror="this.style.display='none';this.parentElement.querySelector('.g-ph').style.display='flex'"/>
+      <img src="images/galleri-2.jpg" alt="Coating" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Bilde legges til</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <p>Kommer snart</p>
       </div>
       <div class="g-overlay"><span>Coating</span></div>
     </div>
     <div class="g-item reveal d2" onclick="openLightbox(this)">
-      <img src="images/galleri-3.jpg" alt="Polering" onerror="this.style.display='none';this.parentElement.querySelector('.g-ph').style.display='flex'"/>
+      <img src="images/galleri-3.jpg" alt="Polering" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Bilde legges til</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <p>Kommer snart</p>
       </div>
       <div class="g-overlay"><span>Polering</span></div>
     </div>
     <div class="g-item reveal d1" onclick="openLightbox(this)">
-      <img src="images/galleri-4.jpg" alt="Innvendig detailing" onerror="this.style.display='none';this.parentElement.querySelector('.g-ph').style.display='flex'"/>
+      <img src="images/galleri-4.jpg" alt="Innvendig" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Bilde legges til</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <p>Kommer snart</p>
       </div>
       <div class="g-overlay"><span>Innvendig</span></div>
     </div>
     <div class="g-item reveal d2" onclick="openLightbox(this)">
-      <img src="images/galleri-5.jpg" alt="Bilpleie" onerror="this.style.display='none';this.parentElement.querySelector('.g-ph').style.display='flex'"/>
+      <img src="images/galleri-5.jpg" alt="Utvendig" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Bilde legges til</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <p>Kommer snart</p>
       </div>
       <div class="g-overlay"><span>Utvendig</span></div>
     </div>
     <div class="g-item reveal d3" onclick="openLightbox(this)">
-      <img src="images/galleri-6.jpg" alt="Ferdig resultat" onerror="this.style.display='none';this.parentElement.querySelector('.g-ph').style.display='flex'"/>
+      <img src="images/galleri-6.jpg" alt="Resultat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <p>Bilde legges til</p>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <p>Kommer snart</p>
       </div>
       <div class="g-overlay"><span>Resultat</span></div>
     </div>
   </div>
 
   <div class="gallery-cta reveal">
-    <p>Se flere bilder og resultater på vår Facebook-side</p>
+    <p>Se flere resultater på Facebook</p>
     <a href="https://www.facebook.com/Oyasbilpleie" target="_blank" rel="noopener" class="btn-outline">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       Følg oss på Facebook
@@ -685,101 +717,52 @@
   </div>
 </section>
 
-<!-- ═══ KONTAKT ════════════════════════════════ -->
+<!-- ═══ KONTAKT ═══ -->
 <section id="kontakt">
-  <div class="sec-head center">
-    <div class="sec-label">Kontakt</div>
-    <h2 class="sec-title">Få et <span>pristilbud</span></h2>
-    <p class="sec-desc">Fyll ut skjemaet, ring oss, eller send en e-post – vi svarer raskt.</p>
-  </div>
+  <div class="contact-ring reveal">
+    <div class="sec-label" style="text-align:center;">Kontakt</div>
+    <h2 class="sec-title" style="text-align:center; font-size:clamp(1.8rem,3.5vw,2.8rem);">Ring oss for <span>pristilbud</span></h2>
+    <p class="ring-sub">Vi foretrekker en telefon – raskt svar og ingen skjemaer.</p>
+    <a href="tel:+4794455835" class="big-phone">944 55 835</a>
 
-  <div class="contact-wrap">
-    <!-- FORM -->
-    <div class="cform reveal">
-      <h3>Send oss en melding</h3>
-      <form id="contactForm" action="https://formspree.io/f/xyyrdkap" method="POST" onsubmit="handleSubmit(event)">
-        <div class="frow">
-          <div class="fg">
-            <label for="name">Navn</label>
-            <input id="name" name="name" type="text" placeholder="Ditt navn" required/>
-          </div>
-          <div class="fg">
-            <label for="phone">Telefon</label>
-            <input id="phone" name="phone" type="tel" placeholder="Ditt telefonnummer"/>
-          </div>
+    <div class="contact-cards">
+      <div class="cc">
+        <div class="cc-icon">📍</div>
+        <div class="cc-lbl">Adresse</div>
+        <div class="cc-val">Nordbyveien 116<br/>Sarpsborg</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">✉️</div>
+        <div class="cc-lbl">E-post</div>
+        <div class="cc-val"><a href="mailto:Oyasbilpleie@gmail.com">Oyasbilpleie@gmail.com</a></div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--blue)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </div>
-        <div class="fg">
-          <label for="service">Tjeneste</label>
-          <select id="service" name="service">
-            <option value="">Velg tjeneste...</option>
-            <option value="Detailing utvendig">Detailing utvendig</option>
-            <option value="Detailing innvendig">Detailing innvendig</option>
-            <option value="Keramisk coating">Keramisk coating</option>
-            <option value="Polering">Polering</option>
-            <option value="Kombipakke">Kombipakke</option>
-            <option value="Annet">Annet</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label for="message">Melding</label>
-          <textarea id="message" name="message" placeholder="Fortell oss om bilen din og hva du ønsker..." required></textarea>
-        </div>
-        <button type="submit" class="fsub">Send melding</button>
-        <div class="f-ok" id="formOk">✓ Takk! Vi tar kontakt med deg snart.</div>
-      </form>
+        <div class="cc-lbl">Facebook</div>
+        <div class="cc-val"><a href="https://www.facebook.com/Oyasbilpleie" target="_blank" rel="noopener">Øyas Bilpleie</a></div>
+      </div>
     </div>
 
-    <!-- INFO -->
-    <div class="cinfo reveal d1">
-      <div class="ci">
-        <div class="ci-icon">📍</div>
-        <div>
-          <div class="ci-lbl">Adresse</div>
-          <div class="ci-val">Nordbyveien 116<br/>Sarpsborg, Norway</div>
-        </div>
-      </div>
-      <div class="ci">
-        <div class="ci-icon">📞</div>
-        <div>
-          <div class="ci-lbl">Telefon</div>
-          <div class="ci-val"><a href="tel:+4794455835">944 55 835</a></div>
-        </div>
-      </div>
-      <div class="ci">
-        <div class="ci-icon">✉️</div>
-        <div>
-          <div class="ci-lbl">E-post</div>
-          <div class="ci-val"><a href="mailto:Oyasbilpleie@gmail.com">Oyasbilpleie@gmail.com</a></div>
-        </div>
-      </div>
-      <div class="ci">
-        <div class="ci-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </div>
-        <div>
-          <div class="ci-lbl">Facebook</div>
-          <div class="ci-val"><a href="https://www.facebook.com/Oyasbilpleie" target="_blank" rel="noopener">facebook.com/Oyasbilpleie</a></div>
-        </div>
-      </div>
-      <div class="ci" style="flex-direction:column; gap:.75rem;">
-        <div style="display:flex; align-items:center; gap:1rem;">
-          <div class="ci-icon">🕐</div>
-          <div class="ci-lbl" style="margin-bottom:0;">Åpningstider</div>
-        </div>
-        <table class="hours-table">
-          <tr><td>Mandag – lørdag</td><td>09:00 – 17:00</td></tr>
-          <tr class="closed"><td>Søndag</td><td>Stengt</td></tr>
-        </table>
-      </div>
+    <div class="contact-hours reveal d1">
+      <div class="contact-hours-title">Åpningstider</div>
+      <div class="hours-row"><span class="day">Mandag</span><span class="time">09:00 – 17:00</span></div>
+      <div class="hours-row"><span class="day">Tirsdag</span><span class="time">09:00 – 17:00</span></div>
+      <div class="hours-row"><span class="day">Onsdag</span><span class="time">09:00 – 17:00</span></div>
+      <div class="hours-row"><span class="day">Torsdag</span><span class="time">09:00 – 17:00</span></div>
+      <div class="hours-row"><span class="day">Fredag</span><span class="time">09:00 – 17:00</span></div>
+      <div class="hours-row"><span class="day">Lørdag</span><span class="time">09:00 – 17:00</span></div>
+      <div class="hours-row"><span class="day">Søndag</span><span class="time closed">Stengt</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═════════════════════════════════ -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-top">
     <div>
-      <div class="f-brand">Øyas <span>Bilpleie</span></div>
+      <div class="f-brand"><span class="fo">ØYAS</span><span class="fb">&nbsp;BILPLEIE</span></div>
       <p class="f-about">Vår kjærlighet for bilpleie er det som driver oss. Premium detailing, keramisk coating og polering i Sarpsborg.</p>
     </div>
     <div class="f-col">
@@ -797,17 +780,16 @@
         <a href="tel:+4794455835">944 55 835</a>
         <a href="mailto:Oyasbilpleie@gmail.com">Oyasbilpleie@gmail.com</a>
         <a href="https://www.facebook.com/Oyasbilpleie" target="_blank" rel="noopener">Facebook</a>
-        <a href="#kontakt">Pristilbud</a>
       </div>
     </div>
   </div>
   <div class="footer-bot">
     <p>© 2025 Øyas Bilpleie · Nordbyveien 116, Sarpsborg</p>
-    <p>Laget med ❤ for biler</p>
+    <p>Man–Lør 09:00–17:00</p>
   </div>
 </footer>
 
-<!-- ═══ PHONE FAB ══════════════════════════════ -->
+<!-- ═══ PHONE FAB ═══ -->
 <a href="tel:+4794455835" class="phone-fab" aria-label="Ring oss">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.88 12.36 19.79 19.79 0 0 1 1.81 3.69 2 2 0 0 1 3.78 1.5h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -815,59 +797,23 @@
   <span class="fab-label">Ring oss</span>
 </a>
 
-<!-- ═══ LIGHTBOX ════════════════════════════════ -->
+<!-- ═══ LIGHTBOX ═══ -->
 <div id="lightbox" onclick="closeLightbox()">
   <button id="lightbox-close" onclick="closeLightbox()">×</button>
   <img id="lightbox-img" src="" alt=""/>
 </div>
 
 <script>
-  /* ── Navbar scroll ── */
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-  /* ── Mobile nav ── */
-  function toggleNav() {
-    document.getElementById('mobileNav').classList.toggle('open');
-  }
+  function toggleNav() { document.getElementById('mobileNav').classList.toggle('open'); }
 
-  /* ── Scroll reveal ── */
-  const observer = new IntersectionObserver((entries) => {
+  const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, { threshold:0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  /* ── Contact form (Formspree) ── */
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('.fsub');
-    btn.textContent = 'Sender...';
-    btn.disabled = true;
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.reset();
-        document.getElementById('formOk').style.display = 'block';
-        btn.textContent = 'Send melding';
-        btn.disabled = false;
-      } else {
-        btn.textContent = 'Feil – prøv igjen';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Feil – prøv igjen';
-      btn.disabled = false;
-    }
-  }
-
-  /* ── Lightbox ── */
   function openLightbox(item) {
     const img = item.querySelector('img');
     if (!img || img.style.display === 'none') return;
@@ -881,6 +827,5 @@
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
-
 </body>
 </html>
