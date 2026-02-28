@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="images/logo.png" type="image/png"/>
-  <link rel="apple-touch-icon" href="images/logo.png"/>
+  <link rel="shortcut icon" href="images/logo.jpg" type="image/jpeg"/>
+  <link rel="apple-touch-icon" href="images/logo.jpg"/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
@@ -63,17 +63,17 @@
     /* ─── RESET ─────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --gold:        #C8963E;
-      --gold-dark:   #A87830;
-      --gold-glow:   rgba(200,150,62,0.15);
-      --gold-border: rgba(200,150,62,0.22);
-      --bg:          #0a0d10;
-      --bg2:         #0f1318;
-      --bg3:         #141a22;
-      --card:        #111620;
+      --gold:        #3EC8D4;
+      --gold-dark:   #28A8B5;
+      --gold-glow:   rgba(62,200,212,0.12);
+      --gold-border: rgba(62,200,212,0.22);
+      --bg:          #07090C;
+      --bg2:         #0B0F14;
+      --bg3:         #101620;
+      --card:        #0D1219;
       --border:      rgba(255,255,255,0.07);
-      --text:        #E8EDF2;
-      --muted:       #6B7A8D;
+      --text:        #E4EDF5;
+      --muted:       #607585;
       --radius:      4px;
       --radius-sm:   3px;
     }
@@ -83,7 +83,7 @@
     img { max-width:100%; display:block; }
     ::-webkit-scrollbar { width:5px; }
     ::-webkit-scrollbar-track { background:var(--bg); }
-    ::-webkit-scrollbar-thumb { background:var(--gold-dark); border-radius:3px; }
+    ::-webkit-scrollbar-thumb { background:var(--gold); border-radius:3px; }
 
     /* ─── NAVBAR ─────────────────────────────────── */
     #navbar {
@@ -97,14 +97,8 @@
     }
     #navbar.scrolled { height:60px; background:rgba(10,13,16,0.97); }
     section[id] { scroll-margin-top: 84px; }
-    .nav-logo { display:flex; align-items:center; gap:.75rem; }
-    .nav-logo img { height:42px; width:auto; }
-    .nav-logo-text {
-      font-family:'Montserrat',sans-serif; font-weight:800;
-      font-size:1.05rem; letter-spacing:.02em; color:var(--text);
-      line-height:1.1;
-    }
-    .nav-logo-text span { color:var(--gold); }
+    .nav-logo { display:flex; align-items:center; }
+    .nav-logo img { height:44px; width:auto; }
     .nav-links { display:flex; align-items:center; gap:2.2rem; list-style:none; }
     .nav-links a {
       font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:600;
@@ -113,12 +107,12 @@
     }
     .nav-links a:hover { color:var(--text); }
     .nav-cta {
-      background:var(--gold) !important; color:#000 !important;
+      background:var(--gold) !important; color:#07090C !important;
       padding:9px 22px; border-radius:4px;
       font-size:.78rem !important; font-weight:700 !important;
       transition:background .2s !important;
     }
-    .nav-cta:hover { background:var(--gold-dark) !important; }
+    .nav-cta:hover { background:var(--gold-dark) !important; color:#fff !important; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0; }
     .hamburger span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:all .3s; }
     .mobile-nav {
@@ -176,7 +170,7 @@
     .hero-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
     .btn-primary {
       display:inline-flex; align-items:center; gap:.6rem;
-      background:var(--gold); color:#000;
+      background:var(--gold); color:#07090C;
       padding:13px 28px; border-radius:4px;
       font-family:'Montserrat',sans-serif; font-size:.86rem; font-weight:700;
       letter-spacing:.07em; text-transform:uppercase; border:none; cursor:pointer;
@@ -256,8 +250,8 @@
       padding:1.2rem 1.6rem; border-radius:6px;
       box-shadow:0 8px 30px rgba(200,150,62,.3);
     }
-    .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; line-height:1; color:#000; }
-    .about-badge .sm { font-size:.8rem; color:rgba(0,0,0,.75); margin-top:.25rem; }
+    .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; line-height:1; color:#07090C; }
+    .about-badge .sm { font-size:.8rem; color:rgba(5,10,15,.75); margin-top:.25rem; }
     .about-text .sec-desc { max-width:100%; }
     .about-text p { color:var(--muted); font-size:.93rem; line-height:1.8; margin-bottom:1rem; }
     .about-text p strong { color:var(--text); }
@@ -379,7 +373,7 @@
     .fg select option { background:var(--bg2); }
     .fg textarea { resize:vertical; min-height:110px; }
     .fsub {
-      width:100%; background:var(--gold); color:#000;
+      width:100%; background:var(--gold); color:#07090C;
       padding:13px; border-radius:4px; border:none; cursor:pointer;
       font-family:'Montserrat',sans-serif; font-size:.85rem; font-weight:700;
       letter-spacing:.08em; text-transform:uppercase; margin-top:.4rem;
@@ -399,7 +393,7 @@
     }
     .footer-top { display:grid; grid-template-columns:1.8fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
     .f-brand { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.1rem; color:var(--text); margin-bottom:.8rem; }
-    .f-brand span { color:var(--gold); }
+    .f-brand span { color:var(--gold); font-weight:900; }
     .f-about { font-size:.85rem; color:var(--muted); line-height:1.7; }
     .f-col h4 {
       font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
@@ -488,8 +482,7 @@
 <!-- ═══ NAVBAR ═══════════════════════════════ -->
 <nav id="navbar">
   <a href="#hjem" class="nav-logo">
-    <img src="images/logo.png" alt="Øyas Bilpleie" onerror="this.style.display='none'"/>
-    <div class="nav-logo-text">Øyas <span>Bilpleie</span></div>
+    <img src="images/logo-text.jpg" alt="Øyas Bilpleie"/>
   </a>
   <ul class="nav-links">
     <li><a href="#om-oss">Om oss</a></li>
