@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adianhofstad.github.io/oyas-bilpleie-website/sitemap.xml
