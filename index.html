@@ -41,6 +41,20 @@
       "longitude": 11.1094
     },
     "areaServed": ["Sarpsborg", "Fredrikstad", "Halden", "Moss", "Østfold"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "00:00",
+        "closes": "00:00"
+      }
+    ],
     "sameAs": ["https://www.facebook.com/Oyasbilpleie"]
   }
   </script>
@@ -449,6 +463,13 @@
       .g-item:nth-child(6) { display:none; }
     }
 
+    /* ─── HOURS TABLE ───────────────────────── */
+    .hours-table { width:100%; border-collapse:collapse; font-size:.88rem; }
+    .hours-table td { padding:.3rem 0; color:var(--text); }
+    .hours-table td:last-child { text-align:right; color:var(--gold); font-family:'Montserrat',sans-serif; font-weight:600; }
+    .hours-table tr.closed td { color:var(--muted); }
+    .hours-table tr.closed td:last-child { color:var(--muted); font-weight:400; }
+
     /* ─── LIGHTBOX ───────────────────────────── */
     #lightbox {
       display:none; position:fixed; inset:0; z-index:2000;
@@ -746,6 +767,16 @@
           <div class="ci-lbl">Facebook</div>
           <div class="ci-val"><a href="https://www.facebook.com/Oyasbilpleie" target="_blank" rel="noopener">facebook.com/Oyasbilpleie</a></div>
         </div>
+      </div>
+      <div class="ci" style="flex-direction:column; gap:.75rem;">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <div class="ci-icon">🕐</div>
+          <div class="ci-lbl" style="margin-bottom:0;">Åpningstider</div>
+        </div>
+        <table class="hours-table">
+          <tr><td>Mandag – lørdag</td><td>09:00 – 17:00</td></tr>
+          <tr class="closed"><td>Søndag</td><td>Stengt</td></tr>
+        </table>
       </div>
     </div>
   </div>
