@@ -74,18 +74,18 @@
     #navbar.scrolled { height:60px; background:rgba(14,25,41,0.98); }
     section[id] { scroll-margin-top:80px; }
     .nav-logo { display:flex; align-items:center; gap:.3rem; }
-    .logo-oyas { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.25rem; letter-spacing:.06em; color:var(--blue); }
-    .logo-bil  { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.25rem; letter-spacing:.06em; color:var(--text); }
+    .logo-oyas { font-family:'Montserrat',sans-serif; font-weight:600; font-size:1.1rem; letter-spacing:.04em; color:var(--blue); }
+    .logo-bil  { font-family:'Montserrat',sans-serif; font-weight:500; font-size:1.1rem; letter-spacing:.04em; color:var(--text); }
     .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
     .nav-links a {
-      font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:600;
-      letter-spacing:.1em; text-transform:uppercase; color:var(--muted); transition:color .2s;
+      font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:500;
+      letter-spacing:.06em; text-transform:uppercase; color:var(--muted); transition:color .2s;
     }
     .nav-links a:hover { color:var(--text); }
     .nav-cta {
       background:var(--blue) !important; color:#07090C !important;
       padding:9px 22px; border-radius:4px;
-      font-size:.78rem !important; font-weight:700 !important; transition:background .2s !important;
+      font-size:.78rem !important; font-weight:600 !important; transition:background .2s !important;
     }
     .nav-cta:hover { background:var(--blue-dark) !important; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:0; }
@@ -97,8 +97,8 @@
     }
     .mobile-nav.open { display:flex; }
     .mobile-nav a {
-      font-family:'Montserrat',sans-serif; font-size:1.1rem; font-weight:700;
-      letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+      font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:500;
+      letter-spacing:.05em; text-transform:uppercase; color:var(--muted);
       padding-bottom:1.2rem; border-bottom:1px solid var(--border); transition:color .2s;
     }
     .mobile-nav a:last-child { border:none; }
@@ -132,13 +132,13 @@
       display:inline-flex; align-items:center; gap:.5rem;
       background:rgba(62,200,212,.07); border:1px solid var(--blue-border);
       color:rgba(62,200,212,.8); font-family:'Montserrat',sans-serif;
-      font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
-      padding:7px 20px; border-radius:50px; margin-bottom:2rem;
+      font-size:.72rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+      padding:6px 18px; border-radius:50px; margin-bottom:1.8rem;
     }
     .hero-title {
       font-family:'Montserrat',sans-serif;
-      font-size:clamp(2.4rem,6vw,5rem);
-      font-weight:900; line-height:1.05; letter-spacing:-.025em;
+      font-size:clamp(2rem,5vw,4rem);
+      font-weight:600; line-height:1.1; letter-spacing:-.015em;
       margin-bottom:1.4rem;
     }
     .hero-title .accent { color:var(--blue); }
@@ -152,8 +152,8 @@
       display:inline-flex; align-items:center; gap:.9rem;
       background:var(--blue); color:#07090C;
       padding:18px 38px; border-radius:4px;
-      font-family:'Montserrat',sans-serif; font-size:1.05rem; font-weight:800;
-      letter-spacing:.04em; text-transform:uppercase;
+      font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:600;
+      letter-spacing:.02em; text-transform:uppercase;
       border:none; cursor:pointer; transition:background .25s;
     }
     .hero-ring:hover { background:var(--blue-dark); color:#fff; }
@@ -174,7 +174,7 @@
       display:grid; grid-template-columns:repeat(4,1fr);
     }
     .stat { padding:1.7rem 1rem; text-align:center; }
-    .stat-val { font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:900; color:var(--blue); }
+    .stat-val { font-family:'Montserrat',sans-serif; font-size:1.2rem; font-weight:500; color:var(--blue); }
     .stat-lbl { font-size:.75rem; color:var(--muted); margin-top:.3rem; }
 
     /* ─── ÅPNINGSTIDER STRIP ─── */
@@ -184,8 +184,8 @@
       gap:2.5rem; flex-wrap:wrap;
     }
     .hours-strip-label {
-      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-      letter-spacing:.18em; text-transform:uppercase; color:var(--blue);
+      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:500;
+      letter-spacing:.1em; text-transform:uppercase; color:var(--blue);
     }
     .hours-items { display:flex; gap:2rem; flex-wrap:wrap; align-items:center; }
     .hours-item { display:flex; align-items:center; gap:.6rem; }
@@ -196,13 +196,13 @@
     /* ─── SECTION BASE ─── */
     section { padding:5rem 6%; }
     .sec-label {
-      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-      letter-spacing:.2em; text-transform:uppercase; color:var(--blue); margin-bottom:.9rem;
+      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:500;
+      letter-spacing:.12em; text-transform:uppercase; color:var(--blue); margin-bottom:.7rem;
     }
     .sec-title {
       font-family:'Montserrat',sans-serif;
-      font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:900;
-      line-height:1.1; letter-spacing:-.02em; margin-bottom:1.1rem;
+      font-size:clamp(1.6rem,3vw,2.4rem); font-weight:600;
+      line-height:1.15; letter-spacing:-.01em; margin-bottom:.9rem;
     }
     .sec-title span { color:var(--blue); }
     .sec-desc { color:var(--muted); font-size:.97rem; line-height:1.75; max-width:560px; }
@@ -218,12 +218,12 @@
       padding:2.5rem 6%; text-align:center;
     }
     .ring-banner p {
-      font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:600;
-      letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:.8rem;
+      font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:400;
+      letter-spacing:.04em; color:var(--muted); margin-bottom:.6rem;
     }
     .ring-number {
-      font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3.5rem);
-      font-weight:900; color:var(--blue); letter-spacing:.04em;
+      font-family:'Montserrat',sans-serif; font-size:clamp(2.2rem,5vw,4rem);
+      font-weight:500; color:var(--blue); letter-spacing:.02em;
     }
     .ring-number a { color:inherit; }
 
@@ -244,7 +244,7 @@
       background:linear-gradient(135deg,var(--blue-dark),var(--blue));
       padding:1rem 1.4rem; border-radius:4px;
     }
-    .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; line-height:1; color:#07090C; }
+    .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:600; line-height:1; color:#07090C; }
     .about-badge .sm  { font-size:.8rem; color:rgba(5,10,15,.7); margin-top:.25rem; }
     .about-text p { color:var(--muted); font-size:.93rem; line-height:1.8; margin-bottom:1rem; }
     .about-text p strong { color:var(--text); }
@@ -273,18 +273,18 @@
     }
     .srv-icon svg { width:22px; height:22px; color:var(--blue); }
     .srv-card h3 {
-      font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:700;
-      margin-bottom:.5rem; letter-spacing:-.01em;
+      font-family:'Montserrat',sans-serif; font-size:.95rem; font-weight:600;
+      margin-bottom:.45rem; letter-spacing:0;
     }
-    .srv-card p { color:var(--muted); font-size:.87rem; line-height:1.65; margin-bottom:1.1rem; }
+    .srv-card p { color:var(--muted); font-size:.86rem; line-height:1.65; margin-bottom:1rem; }
     .srv-tag {
-      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase; color:var(--blue);
+      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:500;
+      letter-spacing:.06em; text-transform:uppercase; color:var(--blue);
     }
     /* Bakgrunnsnummer */
     .srv-num {
       position:absolute; bottom:.5rem; right:1.2rem;
-      font-family:'Montserrat',sans-serif; font-size:5rem; font-weight:900;
+      font-family:'Montserrat',sans-serif; font-size:5rem; font-weight:300;
       color:rgba(62,200,212,.04); line-height:1; user-select:none;
     }
 
@@ -353,7 +353,7 @@
     .cc:hover { border-color:var(--blue-border); }
     .cc-icon { width:44px; height:44px; margin:0 auto .9rem; background:var(--blue-glow); border:1px solid var(--blue-border); border-radius:8px; display:flex; align-items:center; justify-content:center; }
     .cc-icon svg { width:20px; height:20px; color:var(--blue); }
-    .cc-lbl { font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:.4rem; }
+    .cc-lbl { font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.4rem; }
     .cc-val { font-size:.9rem; color:var(--text); }
     .cc-val a { color:var(--text); transition:color .2s; }
     .cc-val a:hover { color:var(--blue); }
@@ -365,8 +365,8 @@
       margin-top:1rem; display:inline-block; width:100%;
     }
     .contact-hours-title {
-      font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:700;
-      letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
+      font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:500;
+      letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
       margin-bottom:1rem; text-align:center;
     }
     .hours-row {
@@ -375,7 +375,7 @@
     }
     .hours-row:last-child { border:none; }
     .hours-row .day { color:var(--text); }
-    .hours-row .time { color:var(--blue); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; }
+    .hours-row .time { color:var(--blue); font-family:'Montserrat',sans-serif; font-weight:400; font-size:.85rem; }
     .hours-row .time.closed { color:var(--muted); font-weight:400; }
 
     /* ─── FOOTER ─── */
@@ -385,12 +385,12 @@
     }
     .footer-top { display:grid; grid-template-columns:1.8fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
     .f-brand { display:flex; gap:.3rem; align-items:center; margin-bottom:.8rem; }
-    .f-brand .fo { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.05rem; color:var(--blue); }
-    .f-brand .fb { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.05rem; color:var(--text); }
+    .f-brand .fo { font-family:'Montserrat',sans-serif; font-weight:600; font-size:1rem; color:var(--blue); }
+    .f-brand .fb { font-family:'Montserrat',sans-serif; font-weight:500; font-size:1rem; color:var(--text); }
     .f-about { font-size:.85rem; color:var(--muted); line-height:1.7; }
     .f-col h4 {
-      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
-      letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:.9rem;
+      font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:500;
+      letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:.8rem;
     }
     .f-links { display:flex; flex-direction:column; gap:.55rem; }
     .f-links a { font-size:.85rem; color:var(--muted); transition:color .2s; }
@@ -407,7 +407,7 @@
       display:flex; align-items:center; gap:.7rem;
       background:var(--blue); color:#07090C;
       padding:14px 22px; border-radius:50px;
-      font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:800;
+      font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:600;
       box-shadow:0 4px 20px rgba(62,200,212,.25);
       transition:background .2s;
     }
@@ -426,8 +426,8 @@
       display:inline-flex; align-items:center; gap:.6rem;
       background:transparent; color:var(--text);
       padding:12px 28px; border-radius:4px;
-      font-family:'Montserrat',sans-serif; font-size:.86rem; font-weight:600;
-      letter-spacing:.07em; text-transform:uppercase;
+      font-family:'Montserrat',sans-serif; font-size:.86rem; font-weight:500;
+      letter-spacing:.04em; text-transform:uppercase;
       border:1.5px solid rgba(255,255,255,.18); cursor:pointer; transition:border-color .25s, color .25s;
     }
     .btn-outline:hover { border-color:var(--blue); color:var(--blue); }
@@ -714,7 +714,7 @@
 <section id="kontakt">
   <div class="contact-ring reveal">
     <div class="sec-label" style="text-align:center;">Kontakt</div>
-    <h2 class="sec-title" style="text-align:center; font-size:clamp(1.8rem,3.5vw,2.8rem);">Ring oss for <span>pristilbud</span></h2>
+    <h2 class="sec-title" style="text-align:center;">Ring oss for <span>pristilbud</span></h2>
     <p class="ring-sub">Vi foretrekker en telefon – raskt svar og ingen skjemaer.</p>
     <a href="tel:+4794455835" class="big-phone">944 55 835</a>
 
