@@ -235,26 +235,10 @@
 
     /* ─── OM OSS ─── */
     #om-oss { background:var(--bg2); }
-    .about-wrap { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
-    .about-img-col { position:relative; }
-    .about-img-col img { width:100%; height:480px; object-fit:cover; border-radius:var(--radius); }
-    .about-img-ph {
-      width:100%; height:480px; border-radius:var(--radius);
-      background:linear-gradient(135deg,var(--bg3),var(--card));
-      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.5rem;
-    }
-    .about-img-ph svg { opacity:.15; color:var(--blue); }
-    .about-img-ph p { font-size:.82rem; color:var(--muted); letter-spacing:.06em; }
-    .about-badge {
-      position:absolute; bottom:2rem; left:2rem;
-      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
-      padding:1rem 1.4rem; border-radius:4px;
-    }
-    .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.5rem; font-weight:600; line-height:1; color:#07090C; }
-    .about-badge .sm  { font-size:.8rem; color:rgba(5,10,15,.7); margin-top:.25rem; }
+    .about-wrap { max-width:720px; margin:0 auto; text-align:center; }
     .about-text p { color:var(--muted); font-size:.93rem; line-height:1.8; margin-bottom:1rem; }
     .about-text p strong { color:var(--text); }
-    .chips { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.8rem; }
+    .chips { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.8rem; justify-content:center; }
     .chip {
       display:flex; align-items:center; gap:.4rem;
       background:var(--card); border:1px solid var(--border);
@@ -297,11 +281,12 @@
     /* ─── GALLERI ─── */
     #galleri { background:var(--bg2); }
     .gallery-grid {
-      display:grid; grid-template-columns:repeat(12,1fr); gap:8px;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
     }
     .g-item {
       border-radius:var(--radius-sm); overflow:hidden;
       position:relative; cursor:pointer; background:var(--bg3);
+      height:220px;
     }
     .g-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s, filter .4s; display:block; }
     .g-item:hover img { transform:scale(1.06); filter:brightness(1.1); }
@@ -315,15 +300,6 @@
       font-family:'Montserrat',sans-serif; font-size:.75rem; font-weight:600;
       color:#fff; letter-spacing:.06em; text-transform:uppercase;
     }
-    .g-item:nth-child(1) { grid-column:span 7; grid-row:span 2; min-height:380px; }
-    .g-item:nth-child(2) { grid-column:span 5; min-height:185px; }
-    .g-item:nth-child(3) { grid-column:span 5; min-height:185px; }
-    .g-item:nth-child(4) { grid-column:span 4; min-height:220px; }
-    .g-item:nth-child(5) { grid-column:span 4; min-height:220px; }
-    .g-item:nth-child(6) { grid-column:span 4; min-height:220px; }
-    .g-item:nth-child(7) { grid-column:span 4; min-height:220px; }
-    .g-item:nth-child(8) { grid-column:span 4; min-height:220px; }
-    .g-item:nth-child(9) { grid-column:span 4; min-height:220px; }
     .g-ph {
       width:100%; height:100%; min-height:inherit;
       display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -483,13 +459,9 @@
       .stats-strip { grid-template-columns:repeat(2,1fr); }
       .about-wrap { grid-template-columns:1fr; gap:3rem; }
       .footer-top { grid-template-columns:1fr 1fr; }
-      .g-item:nth-child(1) { grid-column:span 12; min-height:280px; }
-      .g-item:nth-child(2),.g-item:nth-child(3) { grid-column:span 6; }
-      .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6),
-      .g-item:nth-child(7),.g-item:nth-child(8),.g-item:nth-child(9) { grid-column:span 4; }
+      .gallery-grid { grid-template-columns:repeat(2,1fr); }
       .contact-cards { grid-template-columns:1fr; }
       .hours-strip { gap:1.2rem; }
-      .reviews-grid { grid-template-columns:1fr; }
     }
     @media (max-width:640px) {
       section { padding:3.5rem 5%; }
@@ -497,10 +469,10 @@
       .footer-top { grid-template-columns:1fr; }
       .phone-fab .fab-label { display:none; }
       .phone-fab { padding:16px; border-radius:50%; }
-      .g-item:nth-child(4),.g-item:nth-child(5),.g-item:nth-child(6),
-      .g-item:nth-child(7),.g-item:nth-child(8) { grid-column:span 6; }
-      .g-item:nth-child(9) { display:none; }
+      .gallery-grid { grid-template-columns:repeat(2,1fr); }
+      .g-item { height:160px; }
       .hours-items { gap:1rem; }
+      .reviews-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -578,30 +550,20 @@
 
 <!-- ═══ OM OSS ═══ -->
 <section id="om-oss">
-  <div class="about-wrap">
-    <div class="about-img-col reveal">
-      <img src="images/om-oss.jpg" alt="Øyas Bilpleie" onerror="this.style.display='none'"/>
-      <div class="about-badge">
-        <svg width="18" height="18" viewBox="0 0 24 24" style="flex-shrink:0" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="rgba(7,9,12,.7)"/></svg>
-        <div>
-          <div class="big">5,0 ★</div>
-          <div class="sm">Google-rangering</div>
-        </div>
-      </div>
-    </div>
-    <div class="about-text reveal d1">
-      <div class="sec-label">Om oss</div>
-      <h2 class="sec-title">Vi i Øyas Bilpleie <span>elsker biler</span></h2>
+  <div class="about-wrap reveal">
+    <div class="sec-label">Om oss</div>
+    <h2 class="sec-title">Vi i Øyas Bilpleie <span>elsker biler</span></h2>
+    <div class="about-text">
       <p>Vi i Øyas Bilpleie startet opp fordi vi rett og slett er glad i biler – det er så enkelt som det. For oss er bilpleie ikke bare en jobb, det er noe vi brenner for.</p>
       <p>Vi tror at en velstelt bil gjør noe med deg. Den ser bedre ut, bevarer verdien og gir deg en ekstra stolthet hver gang du setter deg bak rattet. Det er den følelsen vi jobber for å gi deg.</p>
       <p>Vi bruker <strong>kun premium produkter</strong> og tar oss god tid på hvert eneste oppdrag. Det spiller ingen rolle om det er en familiebil eller en sportsbil – vi behandler alle biler som om de var våre egne. Du finner oss på Nordbyveien 116 i Sarpsborg, og vi er enkle å få tak i. <strong>Ring oss så avtaler vi tid.</strong></p>
-      <div class="chips">
-        <div class="chip">Premium produkter</div>
-        <div class="chip">Keramisk coating</div>
-        <div class="chip">Polering</div>
-        <div class="chip">Innvendig detailing</div>
-        <div class="chip">Utvendig detailing</div>
-      </div>
+    </div>
+    <div class="chips">
+      <div class="chip">Premium produkter</div>
+      <div class="chip">Keramisk coating</div>
+      <div class="chip">Polering</div>
+      <div class="chip">Innvendig detailing</div>
+      <div class="chip">Utvendig detailing</div>
     </div>
   </div>
 </section>
