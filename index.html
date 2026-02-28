@@ -41,17 +41,17 @@
     :root {
       --blue:        #3EC8D4;
       --blue-dark:   #28A8B5;
-      --blue-glow:   rgba(62,200,212,0.12);
-      --blue-border: rgba(62,200,212,0.22);
-      --bg:          #07090C;
-      --bg2:         #0B0F14;
-      --bg3:         #101620;
-      --card:        #0D1219;
-      --border:      rgba(255,255,255,0.07);
-      --text:        #E4EDF5;
-      --muted:       #607585;
-      --radius:      4px;
-      --radius-sm:   3px;
+      --blue-glow:   rgba(62,200,212,0.10);
+      --blue-border: rgba(62,200,212,0.20);
+      --bg:          #0E1929;
+      --bg2:         #121F33;
+      --bg3:         #172540;
+      --card:        #152236;
+      --border:      rgba(255,255,255,0.06);
+      --text:        #DDE8F2;
+      --muted:       #6E8AA0;
+      --radius:      3px;
+      --radius-sm:   2px;
     }
     html { scroll-behavior:smooth; }
     body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; line-height:1.6; }
@@ -66,12 +66,12 @@
       position:fixed; top:0; left:0; right:0; z-index:1000;
       display:flex; align-items:center; justify-content:space-between;
       padding:0 6%; height:72px;
-      background:rgba(7,9,12,0.90);
-      backdrop-filter:blur(20px) saturate(180%);
+      background:rgba(14,25,41,0.92);
+      backdrop-filter:blur(20px) saturate(160%);
       border-bottom:1px solid var(--border);
       transition:height .3s, background .3s;
     }
-    #navbar.scrolled { height:60px; background:rgba(7,9,12,0.98); }
+    #navbar.scrolled { height:60px; background:rgba(14,25,41,0.98); }
     section[id] { scroll-margin-top:80px; }
     .nav-logo { display:flex; align-items:center; gap:.3rem; }
     .logo-oyas { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.25rem; letter-spacing:.06em; color:var(--blue); }
@@ -92,7 +92,7 @@
     .hamburger span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:all .3s; }
     .mobile-nav {
       display:none; position:fixed; inset:0; top:72px; z-index:999;
-      background:rgba(7,9,12,.98); padding:2.5rem 6%;
+      background:rgba(14,25,41,.98); padding:2.5rem 6%;
       flex-direction:column; gap:1.8rem;
     }
     .mobile-nav.open { display:flex; }
@@ -112,9 +112,9 @@
     .hero-bg {
       position:absolute; inset:0;
       background:
-        radial-gradient(ellipse at 25% 60%, rgba(62,200,212,.07) 0%, transparent 55%),
-        radial-gradient(ellipse at 75% 30%, rgba(40,168,181,.09) 0%, transparent 50%),
-        linear-gradient(160deg, #07090C 0%, #0B1520 55%, #07090C 100%);
+        radial-gradient(ellipse at 20% 55%, rgba(62,200,212,.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 25%, rgba(40,168,181,.14) 0%, transparent 45%),
+        linear-gradient(160deg, #0A1628 0%, #112040 50%, #0D1A2E 100%);
     }
     .hero-bg img {
       position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -122,7 +122,7 @@
     }
     .hero-overlay {
       position:absolute; inset:0;
-      background:linear-gradient(180deg,rgba(7,9,12,.5) 0%,rgba(7,9,12,.2) 50%,rgba(7,9,12,.7) 100%);
+      background:linear-gradient(180deg,rgba(10,22,40,.4) 0%,rgba(10,22,40,.1) 50%,rgba(10,22,40,.55) 100%);
     }
     .hero-content {
       position:relative; z-index:2;
@@ -194,7 +194,7 @@
     .hours-closed { color:rgba(96,117,133,.6); }
 
     /* ─── SECTION BASE ─── */
-    section { padding:7rem 6%; }
+    section { padding:5rem 6%; }
     .sec-label {
       font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
       letter-spacing:.2em; text-transform:uppercase; color:var(--blue); margin-bottom:.9rem;
@@ -206,7 +206,7 @@
     }
     .sec-title span { color:var(--blue); }
     .sec-desc { color:var(--muted); font-size:.97rem; line-height:1.75; max-width:560px; }
-    .sec-head { margin-bottom:3.5rem; }
+    .sec-head { margin-bottom:2.5rem; }
     .sec-head.center { text-align:center; }
     .sec-head.center .sec-desc { margin:0 auto; }
 
@@ -242,8 +242,7 @@
     .about-badge {
       position:absolute; bottom:2rem; left:2rem;
       background:linear-gradient(135deg,var(--blue-dark),var(--blue));
-      padding:1.2rem 1.6rem; border-radius:6px;
-      box-shadow:0 8px 30px rgba(62,200,212,.25);
+      padding:1rem 1.4rem; border-radius:4px;
     }
     .about-badge .big { font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:900; line-height:1; color:#07090C; }
     .about-badge .sm  { font-size:.8rem; color:rgba(5,10,15,.7); margin-top:.25rem; }
@@ -262,28 +261,22 @@
     .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
     .srv-card {
       background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius); padding:2.5rem 2rem;
-      transition:border-color .3s, transform .3s;
+      border-radius:var(--radius); padding:2rem 1.8rem;
+      transition:border-color .25s;
       position:relative; overflow:hidden;
     }
-    .srv-card::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:2px;
-      background:linear-gradient(90deg,var(--blue),var(--blue-dark));
-      opacity:0; transition:opacity .3s;
-    }
-    .srv-card:hover { border-color:var(--blue-border); transform:translateY(-4px); }
-    .srv-card:hover::before { opacity:1; }
+    .srv-card:hover { border-color:var(--blue-border); }
     .srv-icon {
-      width:56px; height:56px; margin-bottom:1.5rem;
+      width:44px; height:44px; margin-bottom:1.2rem;
       background:var(--blue-glow); border:1px solid var(--blue-border);
-      border-radius:10px; display:flex; align-items:center; justify-content:center;
+      border-radius:8px; display:flex; align-items:center; justify-content:center;
     }
-    .srv-icon svg { width:26px; height:26px; color:var(--blue); }
+    .srv-icon svg { width:22px; height:22px; color:var(--blue); }
     .srv-card h3 {
-      font-family:'Montserrat',sans-serif; font-size:1.05rem; font-weight:800;
-      margin-bottom:.7rem; letter-spacing:-.01em;
+      font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:700;
+      margin-bottom:.5rem; letter-spacing:-.01em;
     }
-    .srv-card p { color:var(--muted); font-size:.88rem; line-height:1.7; margin-bottom:1.4rem; }
+    .srv-card p { color:var(--muted); font-size:.87rem; line-height:1.65; margin-bottom:1.1rem; }
     .srv-tag {
       font-family:'Montserrat',sans-serif; font-size:.7rem; font-weight:700;
       letter-spacing:.1em; text-transform:uppercase; color:var(--blue);
@@ -353,8 +346,8 @@
       display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:3rem;
     }
     .cc {
-      background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius-sm); padding:1.5rem 1.2rem; text-align:center;
+      background:transparent; border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:1.2rem 1rem; text-align:center;
       transition:border-color .25s;
     }
     .cc:hover { border-color:var(--blue-border); }
@@ -367,9 +360,9 @@
 
     /* Åpningstider i kontakt */
     .contact-hours {
-      background:var(--card); border:1px solid var(--border);
-      border-radius:var(--radius-sm); padding:1.5rem 2rem;
-      margin-top:1.2rem; display:inline-block; width:100%;
+      background:transparent; border:1px solid var(--border);
+      border-radius:var(--radius-sm); padding:1.2rem 1.8rem;
+      margin-top:1rem; display:inline-block; width:100%;
     }
     .contact-hours-title {
       font-family:'Montserrat',sans-serif; font-size:.65rem; font-weight:700;
@@ -415,11 +408,10 @@
       background:var(--blue); color:#07090C;
       padding:14px 22px; border-radius:50px;
       font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:800;
-      box-shadow:0 6px 32px rgba(62,200,212,.4);
-      transition:all .3s; animation:fabpulse 2.5s ease-in-out infinite;
+      box-shadow:0 4px 20px rgba(62,200,212,.25);
+      transition:background .2s;
     }
-    .phone-fab:hover { background:var(--blue-dark); color:#fff; transform:translateY(-2px); }
-    @keyframes fabpulse { 0%,100%{box-shadow:0 6px 32px rgba(62,200,212,.4)} 50%{box-shadow:0 6px 48px rgba(62,200,212,.65)} }
+    .phone-fab:hover { background:var(--blue-dark); color:#fff; }
     .phone-fab svg { width:16px; height:16px; flex-shrink:0; }
 
     /* ─── REVEAL ─── */
@@ -463,7 +455,7 @@
       .hours-strip { gap:1.2rem; }
     }
     @media (max-width:640px) {
-      section { padding:4.5rem 5%; }
+      section { padding:3.5rem 5%; }
       .services-grid { grid-template-columns:1fr; }
       .footer-top { grid-template-columns:1fr; }
       .phone-fab .fab-label { display:none; }
