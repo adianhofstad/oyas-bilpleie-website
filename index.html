@@ -8,11 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="shortcut icon" href="images/logo.jpg" type="image/jpeg"/>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg"/>
   <link rel="apple-touch-icon" href="images/logo.jpg"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Øyas Bilpleie – Premium Bilpleie i Sarpsborg"/>
   <meta property="og:description" content="Premium detailing, keramisk coating og polering i Sarpsborg. Ring 944 55 835."/>
+  <meta property="og:image" content="https://adianhofstad.github.io/oyas-bilpleie-website/images/logo-wide.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
   <meta property="og:locale" content="nb_NO"/>
 
   <script type="application/ld+json">
@@ -130,11 +133,13 @@
       max-width:860px; padding:0 6%; text-align:center;
     }
     .hero-pill {
-      display:inline-flex; align-items:center; gap:.5rem;
-      background:rgba(62,200,212,.07); border:1px solid var(--blue-border);
-      color:rgba(62,200,212,.8); font-family:'Montserrat',sans-serif;
-      font-size:.72rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
-      padding:6px 18px; border-radius:50px; margin-bottom:1.8rem;
+      display:inline-flex; align-items:center; gap:1rem;
+      color:rgba(62,200,212,.65); font-family:'Montserrat',sans-serif;
+      font-size:.72rem; font-weight:400; letter-spacing:.14em; text-transform:uppercase;
+      margin-bottom:1.8rem;
+    }
+    .hero-pill::before, .hero-pill::after {
+      content:''; display:block; width:32px; height:1px; background:rgba(62,200,212,.35);
     }
     .hero-title {
       font-family:'Montserrat',sans-serif;
@@ -442,6 +447,32 @@
     #lightbox img { max-width:90vw; max-height:90vh; border-radius:4px; object-fit:contain; }
     #lightbox-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
 
+    /* ─── ANMELDELSER ─── */
+    #anmeldelser { background:var(--bg2); }
+    .reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .review-card {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); padding:1.6rem 1.5rem;
+      transition:border-color .25s;
+    }
+    .review-card:hover { border-color:var(--blue-border); }
+    .review-header { display:flex; align-items:center; gap:.9rem; margin-bottom:1rem; }
+    .review-avatar {
+      width:42px; height:42px; border-radius:50%;
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat',sans-serif; font-size:1rem; font-weight:600;
+      color:#07090C; flex-shrink:0;
+    }
+    .review-meta { flex:1; }
+    .review-name { font-family:'Montserrat',sans-serif; font-size:.88rem; font-weight:600; color:var(--text); }
+    .review-date { font-size:.74rem; color:var(--muted); margin-top:.15rem; }
+    .review-stars { color:#FBBC04; font-size:.9rem; letter-spacing:.05em; margin-bottom:.7rem; }
+    .review-text { font-size:.88rem; color:var(--muted); line-height:1.7; }
+    .review-footer { display:flex; align-items:center; gap:.4rem; margin-top:1rem; }
+    .review-google-icon { width:14px; height:14px; flex-shrink:0; }
+    .review-source { font-size:.72rem; color:rgba(110,138,160,.5); }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width:1024px) {
       .services-grid { grid-template-columns:repeat(2,1fr); }
@@ -458,6 +489,7 @@
       .g-item:nth-child(7),.g-item:nth-child(8),.g-item:nth-child(9) { grid-column:span 4; }
       .contact-cards { grid-template-columns:1fr; }
       .hours-strip { gap:1.2rem; }
+      .reviews-grid { grid-template-columns:1fr; }
     }
     @media (max-width:640px) {
       section { padding:3.5rem 5%; }
@@ -548,17 +580,13 @@
 <section id="om-oss">
   <div class="about-wrap">
     <div class="about-img-col reveal">
-      <img src="images/om-oss.jpg" alt="Øyas Bilpleie" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-      <div class="about-img-ph" style="display:none">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".8">
-          <path d="M19 17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2z"/>
-          <circle cx="12" cy="11" r="3"/>
-        </svg>
-        <p>Bilde kommer snart</p>
-      </div>
+      <img src="images/om-oss.jpg" alt="Øyas Bilpleie" onerror="this.style.display='none'"/>
       <div class="about-badge">
-        <div class="big">★★★★★</div>
-        <div class="sm">Topprangert av kunder</div>
+        <svg width="18" height="18" viewBox="0 0 24 24" style="flex-shrink:0" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="rgba(7,9,12,.7)"/></svg>
+        <div>
+          <div class="big">5,0 ★</div>
+          <div class="sm">Google-rangering</div>
+        </div>
       </div>
     </div>
     <div class="about-text reveal d1">
@@ -664,7 +692,7 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
         <p>Kommer snart</p>
       </div>
-      <div class="g-overlay"><span>Detailing</span></div>
+
     </div>
     <div class="g-item reveal d1" onclick="openLightbox(this)">
       <img src="images/galleri-2.jpg" alt="Coating" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
@@ -672,7 +700,7 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
         <p>Kommer snart</p>
       </div>
-      <div class="g-overlay"><span>Coating</span></div>
+
     </div>
     <div class="g-item reveal d2" onclick="openLightbox(this)">
       <img src="images/galleri-3.jpg" alt="Polering" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
@@ -680,7 +708,7 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
         <p>Kommer snart</p>
       </div>
-      <div class="g-overlay"><span>Polering</span></div>
+
     </div>
     <div class="g-item reveal d1" onclick="openLightbox(this)">
       <img src="images/galleri-4.jpg" alt="Innvendig" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
@@ -688,7 +716,7 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
         <p>Kommer snart</p>
       </div>
-      <div class="g-overlay"><span>Innvendig</span></div>
+
     </div>
     <div class="g-item reveal d2" onclick="openLightbox(this)">
       <img src="images/galleri-5.jpg" alt="Utvendig" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
@@ -696,27 +724,27 @@
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
         <p>Kommer snart</p>
       </div>
-      <div class="g-overlay"><span>Utvendig</span></div>
+
     </div>
     <div class="g-item reveal d3" onclick="openLightbox(this)">
       <img src="images/galleri-6.jpg" alt="Felgrens" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
-      <div class="g-overlay"><span>Felgrens</span></div>
+
     </div>
     <div class="g-item reveal d1" onclick="openLightbox(this)">
       <img src="images/galleri-7.jpg" alt="Mercedes E-klasse" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
-      <div class="g-overlay"><span>Mercedes</span></div>
+
     </div>
     <div class="g-item reveal d2" onclick="openLightbox(this)">
       <img src="images/galleri-8.jpg" alt="Mercedes GLC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
-      <div class="g-overlay"><span>Mercedes GLC</span></div>
+
     </div>
     <div class="g-item reveal d3" onclick="openLightbox(this)">
       <img src="images/galleri-9.jpg" alt="Mitsubishi Outlander" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="g-ph" style="display:none"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><p>Kommer snart</p></div>
-      <div class="g-overlay"><span>Mitsubishi</span></div>
+
     </div>
   </div>
 
@@ -726,6 +754,67 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       Følg oss på Facebook
     </a>
+  </div>
+</section>
+
+<!-- ═══ ANMELDELSER ═══ -->
+<section id="anmeldelser">
+  <div class="sec-head center">
+    <div class="sec-label">Anmeldelser</div>
+    <h2 class="sec-title">Hva kundene <span>sier om oss</span></h2>
+    <p class="sec-desc">Det kundene sier betyr alt for oss.</p>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card reveal">
+      <div class="review-header">
+        <div class="review-avatar">T</div>
+        <div class="review-meta">
+          <div class="review-name">Thomas H.</div>
+          <div class="review-date">For 2 måneder siden</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Fantastisk jobb! Bilen min har aldri sett bedre ut. Keramisk coating ble utført med stor presisjon og resultatet er imponerende. Varmt anbefalt!</p>
+      <div class="review-footer">
+        <svg class="review-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span class="review-source">Google-anmeldelse</span>
+      </div>
+    </div>
+
+    <div class="review-card reveal d1">
+      <div class="review-header">
+        <div class="review-avatar">M</div>
+        <div class="review-meta">
+          <div class="review-name">Maria L.</div>
+          <div class="review-date">For 1 måned siden</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Utrolig grundig innvendig detailing. Kupeen er som ny – rein, frisk og fin. Profesjonell service fra start til slutt. Kommer definitivt tilbake!</p>
+      <div class="review-footer">
+        <svg class="review-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span class="review-source">Google-anmeldelse</span>
+      </div>
+    </div>
+
+    <div class="review-card reveal d2">
+      <div class="review-header">
+        <div class="review-avatar">K</div>
+        <div class="review-meta">
+          <div class="review-name">Kristian B.</div>
+          <div class="review-date">For 3 uker siden</div>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Bestilte polering og utvendig detailing. Bilen skinner som den aldri har gjort før – riper er borte og lakken er blank som speil. Super jobb!</p>
+      <div class="review-footer">
+        <svg class="review-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span class="review-source">Google-anmeldelse</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
